@@ -61,6 +61,10 @@ function buildPrompt(data, excludeList) {
     year: 'numeric', month: 'long', day: 'numeric', weekday: 'long'
   });
 
+  // Normalize URLs: always use https://github.com/owner/repo regardless of
+  // what the API returned (some APIs return github.com/sponsors/owner etc.)
+  repos = repos.map(r => ({ ...r, url: `https://github.com/${r.fullName}` }));
+
   let repoList = '';
   for (const repo of repos) {
     repoList += `\n## ${repo.fullName}
