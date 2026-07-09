@@ -70,14 +70,14 @@ jobs:
         if: steps.send-email.outcome == 'success'
         run: |
           if [ -s .trending-history.new.json ]; then
-            # 合并今日项目和旧历史，去重后保留最近 300 条
+            # 合并今日项目和旧历史，去重后保留最近 200 条（约 3 周 Trending 换手周期）
             node -e "
               const fs = require('fs');
               const today = JSON.parse(fs.readFileSync('.trending-history.new.json','utf-8'));
               let history = [];
               try { history = JSON.parse(fs.readFileSync('.trending-history.json','utf-8')); } catch {}
               const merged = [...new Set([...history, ...today])];
-              const trimmed = merged.slice(-300);
+              const trimmed = merged.slice(-200);
               fs.writeFileSync('.trending-history.json', JSON.stringify(trimmed));
               console.log('历史去重缓存已更新: ' + trimmed.length + ' 条');
             "
