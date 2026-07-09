@@ -50,7 +50,31 @@ GitHub Trending API
 **为什么这么做：**
 - fork 的人不用部署服务器，零成本体验
 - fork 的人不用写抓取脚本，直接复用船长抓好的数据
-- 唯一成本：自己的阿里云百炼 API Key（新用户有免费额度）
+- 默认推荐 DeepSeek 官方 API（注册送免费额度，无需信用卡，最省事）
+- 阿里云百炼也能用（船长自己用的），配置步骤和坑见 GUIDE.md
+
+---
+
+## LLM 配置策略（代码默认值 vs 实际配置）
+
+**代码默认值（给 fork 用户）**：走 DeepSeek 官方 API，最省事
+```
+scripts/github-digest.js 中：
+  baseUrl  默认 = https://api.deepseek.com
+  model    默认 = deepseek-v4-flash
+```
+
+**船长实际配置（云服务器 .env 覆盖）**：走阿里云百炼业务空间，性能更稳
+```
+服务器 /var/www/github-blindbox/.env 中：
+  ANTHROPIC_BASE_URL = https://llm-lovkdbdr3v8ukkup.cn-beijing.maas.aliyuncs.com/compatible-mode/v1
+  ANTHROPIC_MODEL    = deepseek-v4-flash
+```
+
+> **⚠️  如果船长要换模型或端点，直接改服务器 `.env` 即可，不用改代码。**
+> 代码里的默认值是给 fork 用户用的，服务器配置优先级更高（`process.env.ANTHROPIC_BASE_URL || 默认值`）。
+
+**请求体兼容性**：`enable_thinking: false` 是阿里云百炼 DashScope 独有参数。代码做了自动适配——只有当 baseUrl 包含 `aliyuncs.com` 或 `dashscope` 时才加这个字段，DeepSeek 官方/其他厂商端点不会带多余参数。
 
 ---
 
@@ -114,11 +138,12 @@ GitHub Trending API
 
 ## 依赖的外部服务
 
-| 服务 | 用途 | 费用 |
-|------|------|------|
-| 阿里云百炼（DashScope） | deepseek-v4-flash 模型 API | 新用户有免费额度 |
-| QQ 邮箱 SMTP | 发邮件 | 免费 |
-| GitHub | 仓库托管 + fork 传播 | 免费 |
+| 服务 | 用途 | 谁用 | 费用 |
+|------|------|------|------|
+| DeepSeek 官方 API | deepseek-v4-flash 模型 API | fork 用户（默认推荐）| 新用户注册送免费额度，无需信用卡 |
+| 阿里云百炼（DashScope）| deepseek-v4-flash 模型 API | 船长服务器（业务空间专属端点，性能更稳）| 新用户有免费额度 |
+| QQ 邮箱 SMTP | 发邮件 | 所有用户 | 免费 |
+| GitHub | 仓库托管 + fork 传播 | 所有用户 | 免费 |
 
 ---
 

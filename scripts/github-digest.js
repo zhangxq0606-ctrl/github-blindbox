@@ -271,11 +271,26 @@ async function callLLM(systemPrompt) {
     throw new Error('Missing ANTHROPIC_AUTH_TOKEN. 请在项目根目录 .env 文件或 GitHub Actions Secrets 中配置。');
   }
 
-  // 默认走阿里云百炼 DashScope 兼容端点；船长自己在 Actions Secrets 里配业务空间专属端点
-  const baseUrl = (process.env.ANTHROPIC_BASE_URL || 'https://dashscope.aliyuncs.com/compatible-mode/v1').replace(/\/+$/, '');
+  // 默认走 DeepSeek 官方 API（fork 用户省事）；船长自己在服务器 .env 里配阿里云百炼业务空间端点覆盖
+  const baseUrl = (process.env.ANTHROPIC_BASE_URL || 'https://api.deepseek.com').replace(/\/+$/, '');
   const model = process.env.ANTHROPIC_MODEL || 'deepseek-v4-flash';
 
   const url = `${baseUrl}/chat/completions`;
+
+  // 请求体：enable_thinking 是阿里云百炼 DashScope 独有参数，只有走阿里云端点才加
+  // DeepSeek 官方默认非思考模式，不需要额外字段
+  const reqBody = {
+    model: model,
+    max_tokens: 8192,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: '请生成今天的 GitHub Trending 精选。' }
+    ]
+  };
+  const isAliyunDashScope = /aliyuncs\.com|dashscope/.test(baseUrl);
+  if (isAliyunDashScope) {
+    reqBody.enable_thinking = false;
+  }
 
   const response = await fetch(url, {
     method: 'POST',
@@ -283,15 +298,7 @@ async function callLLM(systemPrompt) {
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${apiKey}`
     },
-    body: JSON.stringify({
-      model: model,
-      max_tokens: 8192,
-      enable_thinking: false,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: '请生成今天的 GitHub Trending 精选。' }
-      ]
-    })
+    body: JSON.stringify(reqBody)
   });
 
   if (!response.ok) {
