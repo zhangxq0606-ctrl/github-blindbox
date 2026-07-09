@@ -168,7 +168,6 @@ function buildPrompt(data, excludeList, prefs) {
 - 语言: ${repo.language}
 - 🔥 今日新增: ${repo.starsToday}
 - ⭐ 总星数: ${repo.stars}
-- Fork: ${repo.forks}
 - 链接: ${repo.url}
 `;
   }
