@@ -159,8 +159,8 @@ function buildPrompt(data, excludeList, prefs) {
     return `\n## ${repo.fullName}
 - 描述: ${repo.description}
 - 语言: ${repo.language}
-- 总星数: ${repo.stars}
-- 今日新增: ${repo.starsToday}
+- 🔥 今日新增: ${repo.starsToday}
+- ⭐ 总星数: ${repo.stars}
 - Fork: ${repo.forks}
 - 链接: ${repo.url}
 `;
