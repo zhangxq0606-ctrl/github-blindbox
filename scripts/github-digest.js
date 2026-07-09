@@ -246,6 +246,10 @@ ${yesterdayHint}
 2. 开场白写一段简短介绍（1-2句话），指出今天最值得关注的一个趋势或方向
 3. 每个项目用 2-4 行中文介绍，说人话——**不要技术术语**，假设读者不懂编程
 4. 每个项目必须包含可点击的 Markdown 链接：**[项目名](链接地址)**，不要只写 "🔗 项目链接" 这种文字
+   - ✅ 正确格式：**[Onlook](https://github.com/onlook-dev/onlook)** — AI 优先的设计工具
+   - ❌ 错误格式1：**Onlook** 然后下一行写 https://github.com/onlook-dev/onlook
+   - ❌ 错误格式2：[Onlook](🔗 项目链接) — 这种文字占位符无法被解析
+   - 链接 URL 必须是 https://github.com/owner/repo 形式，方便自动提取用于历史去重
 5. 总体长度控制在 2000-4000 字
 6. **经典常青树和今日新星两部分的项目不要重复**
 7. 末尾附上一句 "以上由 AI 从 GitHub Trending 自动筛选生成"
@@ -381,15 +385,29 @@ async function main() {
     if (args.historyOutput) {
       const selectedNames = [];
 
+      // 格式1：标准 Markdown 链接 [text](https://github.com/owner/repo)
       const linkRegex = /\[([^\]]+)\]\(https:\/\/github\.com\/([^/]+\/[^/)\s]+)\)/g;
       let match;
       while ((match = linkRegex.exec(digest)) !== null) {
         selectedNames.push(match[2]);
       }
 
+      // 格式2：方括号包裹的 fullName [owner/repo]
       const bareRegex = /\[([^\]]+\/[^\]]+)\]/g;
       while ((match = bareRegex.exec(digest)) !== null) {
         const name = match[1].trim();
+        if (!selectedNames.includes(name)) {
+          selectedNames.push(name);
+        }
+      }
+
+      // 格式3：裸 URL（思考模式下 LLM 倾向于 **项目名** + 换行 + https://github.com/owner/repo）
+      // 兜底解析，确保即使 LLM 不按 Markdown 链接格式输出也能拿到 fullName
+      const bareUrlRegex = /https:\/\/github\.com\/([^\s/]+\/[^\s/)\]]+)/g;
+      while ((match = bareUrlRegex.exec(digest)) !== null) {
+        let name = match[1].replace(/\/$/, '').trim();
+        // 去掉可能的锚点或查询参数残留
+        name = name.split(/[?#]/)[0];
         if (!selectedNames.includes(name)) {
           selectedNames.push(name);
         }
