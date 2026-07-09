@@ -113,9 +113,9 @@ function buildPrompt(data, excludeList, prefs) {
     .map(r => ({ ...r, url: `https://github.com/${r.fullName}` }))
     .filter(r => r.owner !== 'sponsors');
 
-  // --- Evergreen pool: 经典常青树候选池（也要参与历史去重，避免反复推荐同一个老项目）
-  // 常青树 = 没被历史排除过的所有项目（星数高的经典项目才会被 AI 挑进这个分区）
-  const candidatesEvergreen = allRepos.filter(r => !excludeSet.has(r.fullName));
+  // --- Evergreen pool: 经典常青树候选池（不过滤历史去重，经典老项目值得反复推荐）
+  // 常青树 = 所有项目（星数高的经典项目才会被 AI 挑进这个分区）
+  const candidatesEvergreen = allRepos;
 
   // --- Fresh pool: 今日新星候选池（和常青树同一标准，都要过历史去重）
   // 保留 freshRepos 单独变量以兼容下游统计逻辑
