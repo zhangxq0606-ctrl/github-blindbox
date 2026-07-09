@@ -5,3 +5,5 @@ digest.txt
 digest-stderr.txt
 # 本地架构说明，仅供 AI 修改操作时阅读，不对外发布
 ARCHITECTURE.md
+# 历史去重持久化文件（推荐过的项目 fullName 列表）
+.trending-history.json

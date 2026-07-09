@@ -113,13 +113,15 @@ function buildPrompt(data, excludeList, prefs) {
     .map(r => ({ ...r, url: `https://github.com/${r.fullName}` }))
     .filter(r => r.owner !== 'sponsors');
 
-  // --- Evergreen pool: pre-dedup, full candidate set (常青树从不参与历史去重)
-  const candidatesEvergreen = allRepos;
+  // --- Evergreen pool: 经典常青树候选池（也要参与历史去重，避免反复推荐同一个老项目）
+  // 常青树 = 没被历史排除过的所有项目（星数高的经典项目才会被 AI 挑进这个分区）
+  const candidatesEvergreen = allRepos.filter(r => !excludeSet.has(r.fullName));
 
-  // --- Fresh pool: history-deduped candidates (今日新星必须过历史去重)
+  // --- Fresh pool: 今日新星候选池（和常青树同一标准，都要过历史去重）
+  // 保留 freshRepos 单独变量以兼容下游统计逻辑
   const freshRepos = allRepos.filter(r => !excludeSet.has(r.fullName));
 
-  // Compute REAL excluded count for the fresh pool (so the prompt is accurate)
+  // Compute REAL excluded count for both pools
   const evergreenCount = candidatesEvergreen.length;
   const freshCount = freshRepos.length;
   const freshExcludedByHistory = allRepos.length - freshCount;
