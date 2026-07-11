@@ -2,7 +2,7 @@
 
 每天 AI 自动从 GitHub Trending 筛选**真正值得关注的项目**，按「创意好玩 / 效率工具 / AI 应用」三类整理好，发到你邮箱。
 
-**不需要任何服务器。** Fork 仓库，配 2 个 API Key，就能每天收邮件。
+**不需要任何服务器。** Fork 仓库，配 1 个 LLM API Key + 1 个邮箱授权码，就能每天收邮件。
 
 ---
 
@@ -13,10 +13,10 @@
 **这个项目做了四层过滤：**
 
 **① 多语言聚合抓取 → 建立候选池**
-5 个语言维度（全语言、Python、JavaScript、TypeScript、Go）并行抓取，去重后得到 50-80 个候选项目。
+7 个语言维度（全语言、Python、JavaScript、TypeScript、Go、Rust、Java）并行抓取，去重后得到 50-80 个候选项目。
 
 **② 数据层硬过滤 → 物理删除不相关类别**
-11 条正则规则，翻墙、K8s、算法库、Web 框架等类别在送 AI 之前直接删掉，不浪费 token。
+12 条正则规则，翻墙、K8s、算法库、Web 框架、编程语言等类别在送 AI 之前直接删掉，不浪费 token。
 
 **③ 双池历史去重 → 避免信息疲劳**
 - 常青树池：经典老项目短期去重，2 天后可重新推荐
@@ -102,10 +102,11 @@ push 到 GitHub（公开数据源）
 
 ```bash
 # 1. 安装依赖
-cd scripts && npm install
+npm install
 
 # 2. 复制环境变量并填写
-cp .env.example .env
+# Windows: copy .env.example .env
+# macOS/Linux: cp .env.example .env
 # 编辑 .env 填入你的 API Key 和邮箱授权码
 
 # 3. 生成 digest
