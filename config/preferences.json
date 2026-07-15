@@ -18,7 +18,7 @@
     },
     {
       "reason": "K8s/云原生/可观测性基础设施",
-      "pattern": "kubernetes|\\bk8s\\b|opentelemetry|jaeger|prometheus|victoriametrics|time series database|orchestration platform|cert-manager|container runtime|distributed tracing|job queueing|linux virtual machine",
+      "pattern": "kubernetes|\\bk8s\\b|opentelemetry|jaeger|prometheus|victoriametrics|time series database|container orchestration|kubernetes.*orchestration|cert-manager|container runtime|distributed tracing|job queueing|linux virtual machine",
       "field": "description"
     },
     {
@@ -27,10 +27,10 @@
       "field": "description"
     },
     {
-      "reason": "纯Agent框架(破10万星例外)",
+      "reason": "纯Agent框架(破3万星例外)",
       "pattern": "multi-agent|agent framework|agent sdk|agent toolkit|agent collaboration|agent cli",
       "field": "description",
-      "starsException": 100000
+      "starsException": 30000
     },
     {
       "reason": "构建工具/包管理器/任务运行器",
@@ -54,7 +54,7 @@
     },
     {
       "reason": "纯编程语言/运行时/编译器",
-      "pattern": "programming language|runtime for|native port of|compiler for",
+      "pattern": "programming language|runtime for|compiler for",
       "field": "description"
     },
     {
@@ -85,7 +85,7 @@
     },
     {
       "reason": "企业级AI网关/推理服务框架",
-      "pattern": "ai gateway|inference serving|inference framework|datacenter scale|model serving|llm gateway|enterprise ai platform",
+      "pattern": "ai gateway|inference serving|inference server|serving framework|datacenter scale|model serving|llm gateway|enterprise ai platform",
       "field": "description"
     },
     {
