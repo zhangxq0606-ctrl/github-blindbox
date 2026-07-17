@@ -157,9 +157,9 @@ if [ "$EMAIL_SENT" = "true" ]; then
           version: 1,
           entries: [],
           legacy: {
-            freshNames: legacy,
+            freshNames: legacy.slice(-50),
             freshNamesExpiresAt: new Date(now + 7 * day).toISOString(),
-            evergreenNames: legacy,
+            evergreenNames: legacy.slice(-100),
             evergreenNamesExpiresAt: new Date(now + 14 * day).toISOString()
           }
         };
