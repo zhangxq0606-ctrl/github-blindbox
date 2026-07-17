@@ -2046,26 +2046,6 @@
     },
     {
       "rank": 102,
-      "owner": "keploy",
-      "name": "keploy",
-      "fullName": "keploy/keploy",
-      "url": "https://github.com/keploy/keploy",
-      "description": "Open-source platform for creating safe, isolated production sandboxes for API, integration, and E2E testing.",
-      "language": "Go",
-      "stars": 17995,
-      "forks": 2268,
-      "starsToday": 524,
-      "periods": [
-        "monthly"
-      ],
-      "sources": [
-        "monthly:go"
-      ],
-      "primaryPeriod": "monthly",
-      "source": "monthly:go"
-    },
-    {
-      "rank": 103,
       "owner": "hmjz100",
       "name": "LinkSwift",
       "fullName": "hmjz100/LinkSwift",
@@ -2085,7 +2065,7 @@
       "source": "weekly:javascript"
     },
     {
-      "rank": 104,
+      "rank": 103,
       "owner": "Chocobozzz",
       "name": "PeerTube",
       "fullName": "Chocobozzz/PeerTube",
@@ -2105,7 +2085,7 @@
       "source": "monthly:typescript"
     },
     {
-      "rank": 105,
+      "rank": 104,
       "owner": "juicedata",
       "name": "juicefs",
       "fullName": "juicedata/juicefs",
@@ -2125,7 +2105,7 @@
       "source": "monthly:go"
     },
     {
-      "rank": 106,
+      "rank": 105,
       "owner": "wechat-article",
       "name": "wechat-article-exporter",
       "fullName": "wechat-article/wechat-article-exporter",
@@ -2145,7 +2125,7 @@
       "source": "weekly:typescript"
     },
     {
-      "rank": 107,
+      "rank": 106,
       "owner": "webtorrent",
       "name": "webtorrent",
       "fullName": "webtorrent/webtorrent",
@@ -2165,7 +2145,7 @@
       "source": "monthly:javascript"
     },
     {
-      "rank": 108,
+      "rank": 107,
       "owner": "Anuken",
       "name": "Mindustry",
       "fullName": "Anuken/Mindustry",
@@ -2185,7 +2165,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 109,
+      "rank": 108,
       "owner": "gyoridavid",
       "name": "ai_agents_az",
       "fullName": "gyoridavid/ai_agents_az",
@@ -2205,7 +2185,7 @@
       "source": "weekly:python"
     },
     {
-      "rank": 110,
+      "rank": 109,
       "owner": "beclab",
       "name": "Olares",
       "fullName": "beclab/Olares",
@@ -2225,7 +2205,7 @@
       "source": "monthly:go"
     },
     {
-      "rank": 111,
+      "rank": 110,
       "owner": "bluenviron",
       "name": "mediamtx",
       "fullName": "bluenviron/mediamtx",
@@ -2245,7 +2225,7 @@
       "source": "monthly:go"
     },
     {
-      "rank": 112,
+      "rank": 111,
       "owner": "kestra-io",
       "name": "kestra",
       "fullName": "kestra-io/kestra",
@@ -2265,7 +2245,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 113,
+      "rank": 112,
       "owner": "freeok",
       "name": "so-novel",
       "fullName": "freeok/so-novel",
@@ -2285,7 +2265,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 114,
+      "rank": 113,
       "owner": "darrenhinde",
       "name": "OpenAgentsControl",
       "fullName": "darrenhinde/OpenAgentsControl",
@@ -2305,7 +2285,7 @@
       "source": "weekly:typescript"
     },
     {
-      "rank": 115,
+      "rank": 114,
       "owner": "microsoft",
       "name": "typescript-go",
       "fullName": "microsoft/typescript-go",
@@ -2325,7 +2305,7 @@
       "source": "weekly:go"
     },
     {
-      "rank": 116,
+      "rank": 115,
       "owner": "opensearch-project",
       "name": "OpenSearch",
       "fullName": "opensearch-project/OpenSearch",
@@ -2345,7 +2325,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 117,
+      "rank": 116,
       "owner": "LuckyOne7777",
       "name": "ChatGPT-Micro-Cap-Experiment",
       "fullName": "LuckyOne7777/ChatGPT-Micro-Cap-Experiment",
@@ -2365,7 +2345,7 @@
       "source": "weekly:python"
     },
     {
-      "rank": 118,
+      "rank": 117,
       "owner": "crewAIInc",
       "name": "crewAI",
       "fullName": "crewAIInc/crewAI",
@@ -2385,7 +2365,7 @@
       "source": "weekly:python"
     },
     {
-      "rank": 119,
+      "rank": 118,
       "owner": "mmalmi",
       "name": "nostr-vpn",
       "fullName": "mmalmi/nostr-vpn",
@@ -2405,7 +2385,7 @@
       "source": "weekly:rust"
     },
     {
-      "rank": 120,
+      "rank": 119,
       "owner": "AUTOMATIC1111",
       "name": "stable-diffusion-webui",
       "fullName": "AUTOMATIC1111/stable-diffusion-webui",
@@ -2425,7 +2405,7 @@
       "source": "weekly:all"
     },
     {
-      "rank": 121,
+      "rank": 120,
       "owner": "koala73",
       "name": "worldmonitor",
       "fullName": "koala73/worldmonitor",
@@ -2447,7 +2427,7 @@
       "source": "daily:typescript,monthly:typescript"
     },
     {
-      "rank": 122,
+      "rank": 121,
       "owner": "maximhq",
       "name": "bifrost",
       "fullName": "maximhq/bifrost",
@@ -2467,7 +2447,7 @@
       "source": "weekly:go"
     },
     {
-      "rank": 123,
+      "rank": 122,
       "owner": "tulir",
       "name": "whatsmeow",
       "fullName": "tulir/whatsmeow",
@@ -2487,7 +2467,7 @@
       "source": "monthly:go"
     },
     {
-      "rank": 124,
+      "rank": 123,
       "owner": "jenkinsci",
       "name": "jenkins",
       "fullName": "jenkinsci/jenkins",
@@ -2507,7 +2487,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 125,
+      "rank": 124,
       "owner": "apache",
       "name": "maven",
       "fullName": "apache/maven",
@@ -2527,7 +2507,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 126,
+      "rank": 125,
       "owner": "badlogic",
       "name": "pi-skills",
       "fullName": "badlogic/pi-skills",
@@ -2547,7 +2527,7 @@
       "source": "daily:typescript"
     },
     {
-      "rank": 127,
+      "rank": 126,
       "owner": "microsoft",
       "name": "agent-lightning",
       "fullName": "microsoft/agent-lightning",
@@ -2567,7 +2547,7 @@
       "source": "daily:python"
     },
     {
-      "rank": 128,
+      "rank": 127,
       "owner": "karpathy",
       "name": "nanochat",
       "fullName": "karpathy/nanochat",
@@ -2587,7 +2567,7 @@
       "source": "daily:python"
     },
     {
-      "rank": 129,
+      "rank": 128,
       "owner": "firecrawl",
       "name": "pdf-inspector",
       "fullName": "firecrawl/pdf-inspector",
@@ -2607,7 +2587,7 @@
       "source": "weekly:rust"
     },
     {
-      "rank": 130,
+      "rank": 129,
       "owner": "webpack",
       "name": "webpack",
       "fullName": "webpack/webpack",
@@ -2627,7 +2607,7 @@
       "source": "monthly:javascript"
     },
     {
-      "rank": 131,
+      "rank": 130,
       "owner": "masoncl",
       "name": "review-prompts",
       "fullName": "masoncl/review-prompts",
@@ -2647,7 +2627,7 @@
       "source": "daily:python"
     },
     {
-      "rank": 132,
+      "rank": 131,
       "owner": "pocketbase",
       "name": "pocketbase",
       "fullName": "pocketbase/pocketbase",
@@ -2667,7 +2647,7 @@
       "source": "weekly:go"
     },
     {
-      "rank": 133,
+      "rank": 132,
       "owner": "ai-dynamo",
       "name": "dynamo",
       "fullName": "ai-dynamo/dynamo",
@@ -2687,6 +2667,26 @@
       ],
       "primaryPeriod": "weekly",
       "source": "weekly:rust,monthly:rust"
+    },
+    {
+      "rank": 133,
+      "owner": "eslint",
+      "name": "eslint",
+      "fullName": "eslint/eslint",
+      "url": "https://github.com/eslint/eslint",
+      "description": "Find and fix problems in your JavaScript code.",
+      "language": "JavaScript",
+      "stars": 27366,
+      "forks": 5094,
+      "starsToday": 279,
+      "periods": [
+        "monthly"
+      ],
+      "sources": [
+        "monthly:javascript"
+      ],
+      "primaryPeriod": "monthly",
+      "source": "monthly:javascript"
     },
     {
       "rank": 134,
@@ -5273,7 +5273,7 @@
       "source": "daily:java,weekly:java"
     }
   ],
-  "fetchedAt": "2026-07-17T06:02:46.439Z",
+  "fetchedAt": "2026-07-17T21:01:26.669Z",
   "count": 261,
   "source": "cloudflare-multi-period",
   "quality": {
