@@ -215,10 +215,12 @@ function buildPools(repos, excludeList, historyState, now, shortlists) {
 function formatCandidates(repos) {
   return repos.map(repo => {
     const unit = GROWTH_UNIT[resolvePrimaryPeriod(repo)] || '星/周';
+    const rawGrowth = repo.starsToday || 0;
+    const safeGrowth = rawGrowth > (repo.stars || 0) * 0.8 ? 0 : rawGrowth;
     return [
       `项目：${repo.fullName}`,
       `描述：${repo.description || '（暂无描述）'}`,
-      `语言：${repo.language || 'Unknown'}｜热度：+${repo.starsToday || 0} ${unit}｜总星数：${repo.stars || 0}`
+      `语言：${repo.language || 'Unknown'}｜热度：+${safeGrowth} ${unit}｜总星数：${repo.stars || 0}`
     ].join('\n');
   }).join('\n\n');
 }
@@ -236,9 +238,17 @@ ${preferences.readerProfile}
 
 严格规则：
 1. 只能选候选池中列出的 fullName，不能编造、不能引用候选池之外的项目。
-2. 只输出一段开场文字（仅「今日新星」需要）和 ${count} 个项目块；不要输出标题、分类标题、候选池说明、思考过程或道歉。
-3. 每个项目块只出现一次链接，必须为 **[owner/repo](https://github.com/owner/repo)**，链接中的 fullName 必须与候选池完全一致。
-4. 每个项目块用三个独立段落介绍，每段是一句完整中文，每句约 70-100 个汉字，分别说明：它是什么、核心价值、对独立开发者的启发。
+2. 先输出一段开场文字（仅「今日新星」需要），然后按品类分组输出 ${count} 个项目块。同品类的项目必须连续排列在一起。不要输出其他标题、候选池说明、思考过程或道歉。
+3. 品类分组标题格式：### ⚡ 品类名。每个品类标题下可以有 1-多个项目。品类表：
+   ⚡ AI模型 — 推理框架/量化/训练工具
+   🤖 AI Agent — 代理框架/编排/工作流
+   🛠 开发工具 — 编译器/IDE/测试/CI
+   🔧 效率工具 — 自动化/脚本/API工具
+   🎨 创意好玩 — 有趣/创意/可视化
+   📊 数据金融 — 数据分析/量化/爬虫
+4. 每个项目块格式：
+   **[owner/repo](https://github.com/owner/repo)** · ⭐ 总星数 · 📈 +数字 单位
+   然后用三个独立段落介绍，每段一句完整中文，约 70-100 个汉字，分别说明：它是什么、核心价值、对独立开发者的启发。每个项目末尾写「🔥 +数字 单位」热度标记，单位必须与候选池标注一致。
 5. ${specialRule}
 6. 不得出现「没有好项目」「候选不足」「无法推荐」等拒绝语。第 ${attempt} 次生成必须严格遵守上述格式。
 
@@ -306,7 +316,7 @@ async function rewriteSelection(kind, selection, expectedCount) {
   if (expectedCount === 0) return selection;
   const allowedNames = new Set(selection.names);
   const title = kind === 'fresh' ? '今日新星' : '经典常青树';
-  const prompt = `请扩写下面的「${title}」内容以提高邮件篇幅。严格保留原有 ${expectedCount} 个 Markdown 链接，不得新增、删除或替换项目链接；不要输出标题、思考过程或候选池说明。每个项目仍用三个独立段落，每段为一句约 110-140 个汉字的完整中文。\n\n原内容：\n${selection.text}`;
+  const prompt = `请扩写下面的「${title}」内容以提高邮件篇幅。严格保留原有 ${expectedCount} 个 Markdown 链接和品类分组标题（### ⚡ 品类名），不得新增、删除或替换项目链接，不得改变品类分组顺序。不要输出思考过程或候选池说明。每个项目仍用三个独立段落，每段为一句约 110-140 个汉字的完整中文，保留元信息行（⭐ 总星数 · 📈 +数字 单位）和末尾的🔥热度标记。\n\n原内容：\n${selection.text}`;
   for (let attempt = 1; attempt <= MAX_LENGTH_REWRITE_ATTEMPTS; attempt++) {
     const text = await callLLM(prompt);
     const validation = validateSelection(text, allowedNames, expectedCount);
