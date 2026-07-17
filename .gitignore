@@ -11,3 +11,5 @@ ARCHITECTURE.md
 .trending-history-state.json
 # 服务器端数据缓存目录（fetch-trending.sh 写入，不应入库）
 cache/
+# Trae IDE 本地规则文件（含服务器 IP/SSH 路径等运维信息，禁止入库）
+.trae/

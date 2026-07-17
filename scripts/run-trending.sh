@@ -105,13 +105,13 @@ DIGEST_SIZE=$(wc -c < "$TMP_DIR/trending-digest.txt")
 echo "[$TIMESTAMP] Digest generated: ${DIGEST_SIZE} bytes" | tee -a "$LOG_FILE"
 
 # Step 3: Send via QQ email (with retry)
+# 收件人邮箱从 .env 的 QQ_EMAIL 读取（send-email.js 内部 loadEnv + fallback）
 MAX_RETRIES=3
 RETRY_DELAY=30
 EMAIL_SENT=false
 for ((ATTEMPT=1; ATTEMPT<=MAX_RETRIES; ATTEMPT++)); do
   echo "[$TIMESTAMP] Step 3: Sending email (attempt $ATTEMPT/$MAX_RETRIES)..." | tee -a "$LOG_FILE"
   if cat "$TMP_DIR/trending-digest.txt" | node "$SCRIPTS_DIR/send-email.js" \
-    --to "3339898076@qq.com" \
     --subject "GitHub 每日盲盒 — $(date '+%Y-%m-%d')" 2>>"$LOG_FILE"; then
     echo "[$TIMESTAMP] Email sent successfully on attempt $ATTEMPT" | tee -a "$LOG_FILE"
     EMAIL_SENT=true
