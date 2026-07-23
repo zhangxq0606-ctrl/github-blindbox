@@ -1584,26 +1584,6 @@
     },
     {
       "rank": 79,
-      "owner": "binwiederhier",
-      "name": "ntfy",
-      "fullName": "binwiederhier/ntfy",
-      "url": "https://github.com/binwiederhier/ntfy",
-      "description": "Send push notifications to your phone or desktop using PUT/POST",
-      "language": "Go",
-      "stars": 31394,
-      "forks": 1363,
-      "starsToday": 785,
-      "periods": [
-        "monthly"
-      ],
-      "sources": [
-        "monthly:go"
-      ],
-      "primaryPeriod": "monthly",
-      "source": "monthly:go"
-    },
-    {
-      "rank": 80,
       "owner": "Flowseal",
       "name": "zapret-discord-youtube",
       "fullName": "Flowseal/zapret-discord-youtube",
@@ -1623,7 +1603,7 @@
       "source": "weekly:all"
     },
     {
-      "rank": 81,
+      "rank": 80,
       "owner": "OpenWhispr",
       "name": "openwhispr",
       "fullName": "OpenWhispr/openwhispr",
@@ -1643,7 +1623,7 @@
       "source": "monthly:javascript"
     },
     {
-      "rank": 82,
+      "rank": 81,
       "owner": "openai",
       "name": "skills",
       "fullName": "openai/skills",
@@ -1663,7 +1643,7 @@
       "source": "daily:python"
     },
     {
-      "rank": 83,
+      "rank": 82,
       "owner": "skylot",
       "name": "jadx",
       "fullName": "skylot/jadx",
@@ -1683,7 +1663,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 84,
+      "rank": 83,
       "owner": "EveryInc",
       "name": "compound-engineering-plugin",
       "fullName": "EveryInc/compound-engineering-plugin",
@@ -1703,7 +1683,7 @@
       "source": "weekly:python"
     },
     {
-      "rank": 85,
+      "rank": 84,
       "owner": "thunderbird",
       "name": "thunderbird-android",
       "fullName": "thunderbird/thunderbird-android",
@@ -1723,7 +1703,7 @@
       "source": "daily:typescript"
     },
     {
-      "rank": 86,
+      "rank": 85,
       "owner": "VectifyAI",
       "name": "PageIndex",
       "fullName": "VectifyAI/PageIndex",
@@ -1743,7 +1723,7 @@
       "source": "weekly:python"
     },
     {
-      "rank": 87,
+      "rank": 86,
       "owner": "ArnasDon",
       "name": "wacrm",
       "fullName": "ArnasDon/wacrm",
@@ -1763,7 +1743,7 @@
       "source": "monthly:typescript"
     },
     {
-      "rank": 88,
+      "rank": 87,
       "owner": "chinese-poetry",
       "name": "chinese-poetry",
       "fullName": "chinese-poetry/chinese-poetry",
@@ -1783,7 +1763,7 @@
       "source": "monthly:javascript"
     },
     {
-      "rank": 89,
+      "rank": 88,
       "owner": "ruvnet",
       "name": "claude-flow",
       "fullName": "ruvnet/claude-flow",
@@ -1803,7 +1783,7 @@
       "source": "weekly:typescript"
     },
     {
-      "rank": 90,
+      "rank": 89,
       "owner": "DrewThomasson",
       "name": "ebook2audiobook",
       "fullName": "DrewThomasson/ebook2audiobook",
@@ -1823,7 +1803,7 @@
       "source": "weekly:python"
     },
     {
-      "rank": 91,
+      "rank": 90,
       "owner": "agentscope-ai",
       "name": "agentscope-java",
       "fullName": "agentscope-ai/agentscope-java",
@@ -1843,7 +1823,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 92,
+      "rank": 91,
       "owner": "3b1b",
       "name": "manim",
       "fullName": "3b1b/manim",
@@ -1863,7 +1843,7 @@
       "source": "weekly:python"
     },
     {
-      "rank": 93,
+      "rank": 92,
       "owner": "seaweedfs",
       "name": "seaweedfs",
       "fullName": "seaweedfs/seaweedfs",
@@ -1883,7 +1863,7 @@
       "source": "monthly:go"
     },
     {
-      "rank": 94,
+      "rank": 93,
       "owner": "rendercv",
       "name": "rendercv",
       "fullName": "rendercv/rendercv",
@@ -1903,7 +1883,7 @@
       "source": "daily:all"
     },
     {
-      "rank": 95,
+      "rank": 94,
       "owner": "CJackHwang",
       "name": "ds2api",
       "fullName": "CJackHwang/ds2api",
@@ -1923,7 +1903,7 @@
       "source": "weekly:go"
     },
     {
-      "rank": 96,
+      "rank": 95,
       "owner": "jamiepine",
       "name": "voicebox",
       "fullName": "jamiepine/voicebox",
@@ -1945,7 +1925,7 @@
       "source": "daily:typescript,monthly:typescript"
     },
     {
-      "rank": 97,
+      "rank": 96,
       "owner": "agentgateway",
       "name": "agentgateway",
       "fullName": "agentgateway/agentgateway",
@@ -1965,7 +1945,7 @@
       "source": "monthly:rust"
     },
     {
-      "rank": 98,
+      "rank": 97,
       "owner": "agrinman",
       "name": "tunnelto",
       "fullName": "agrinman/tunnelto",
@@ -1985,7 +1965,7 @@
       "source": "daily:all"
     },
     {
-      "rank": 99,
+      "rank": 98,
       "owner": "getarcaneapp",
       "name": "arcane",
       "fullName": "getarcaneapp/arcane",
@@ -2005,7 +1985,7 @@
       "source": "monthly:go"
     },
     {
-      "rank": 100,
+      "rank": 99,
       "owner": "XTLS",
       "name": "Xray-core",
       "fullName": "XTLS/Xray-core",
@@ -2025,7 +2005,7 @@
       "source": "weekly:go"
     },
     {
-      "rank": 101,
+      "rank": 100,
       "owner": "actions",
       "name": "checkout",
       "fullName": "actions/checkout",
@@ -2045,7 +2025,7 @@
       "source": "monthly:typescript"
     },
     {
-      "rank": 102,
+      "rank": 101,
       "owner": "hmjz100",
       "name": "LinkSwift",
       "fullName": "hmjz100/LinkSwift",
@@ -2065,7 +2045,7 @@
       "source": "weekly:javascript"
     },
     {
-      "rank": 103,
+      "rank": 102,
       "owner": "Chocobozzz",
       "name": "PeerTube",
       "fullName": "Chocobozzz/PeerTube",
@@ -2085,7 +2065,7 @@
       "source": "monthly:typescript"
     },
     {
-      "rank": 104,
+      "rank": 103,
       "owner": "juicedata",
       "name": "juicefs",
       "fullName": "juicedata/juicefs",
@@ -2105,7 +2085,7 @@
       "source": "monthly:go"
     },
     {
-      "rank": 105,
+      "rank": 104,
       "owner": "wechat-article",
       "name": "wechat-article-exporter",
       "fullName": "wechat-article/wechat-article-exporter",
@@ -2125,7 +2105,7 @@
       "source": "weekly:typescript"
     },
     {
-      "rank": 106,
+      "rank": 105,
       "owner": "webtorrent",
       "name": "webtorrent",
       "fullName": "webtorrent/webtorrent",
@@ -2145,7 +2125,7 @@
       "source": "monthly:javascript"
     },
     {
-      "rank": 107,
+      "rank": 106,
       "owner": "Anuken",
       "name": "Mindustry",
       "fullName": "Anuken/Mindustry",
@@ -2165,7 +2145,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 108,
+      "rank": 107,
       "owner": "gyoridavid",
       "name": "ai_agents_az",
       "fullName": "gyoridavid/ai_agents_az",
@@ -2185,7 +2165,7 @@
       "source": "weekly:python"
     },
     {
-      "rank": 109,
+      "rank": 108,
       "owner": "beclab",
       "name": "Olares",
       "fullName": "beclab/Olares",
@@ -2205,7 +2185,7 @@
       "source": "monthly:go"
     },
     {
-      "rank": 110,
+      "rank": 109,
       "owner": "bluenviron",
       "name": "mediamtx",
       "fullName": "bluenviron/mediamtx",
@@ -2225,7 +2205,7 @@
       "source": "monthly:go"
     },
     {
-      "rank": 111,
+      "rank": 110,
       "owner": "kestra-io",
       "name": "kestra",
       "fullName": "kestra-io/kestra",
@@ -2245,7 +2225,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 112,
+      "rank": 111,
       "owner": "freeok",
       "name": "so-novel",
       "fullName": "freeok/so-novel",
@@ -2265,7 +2245,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 113,
+      "rank": 112,
       "owner": "darrenhinde",
       "name": "OpenAgentsControl",
       "fullName": "darrenhinde/OpenAgentsControl",
@@ -2285,7 +2265,7 @@
       "source": "weekly:typescript"
     },
     {
-      "rank": 114,
+      "rank": 113,
       "owner": "microsoft",
       "name": "typescript-go",
       "fullName": "microsoft/typescript-go",
@@ -2305,7 +2285,7 @@
       "source": "weekly:go"
     },
     {
-      "rank": 115,
+      "rank": 114,
       "owner": "opensearch-project",
       "name": "OpenSearch",
       "fullName": "opensearch-project/OpenSearch",
@@ -2325,7 +2305,7 @@
       "source": "monthly:java"
     },
     {
-      "rank": 116,
+      "rank": 115,
       "owner": "LuckyOne7777",
       "name": "ChatGPT-Micro-Cap-Experiment",
       "fullName": "LuckyOne7777/ChatGPT-Micro-Cap-Experiment",
@@ -2343,6 +2323,26 @@
       ],
       "primaryPeriod": "weekly",
       "source": "weekly:python"
+    },
+    {
+      "rank": 116,
+      "owner": "prettier",
+      "name": "prettier",
+      "fullName": "prettier/prettier",
+      "url": "https://github.com/prettier/prettier",
+      "description": "Prettier is an opinionated code formatter.",
+      "language": "JavaScript",
+      "stars": 52090,
+      "forks": 4843,
+      "starsToday": 368,
+      "periods": [
+        "monthly"
+      ],
+      "sources": [
+        "monthly:javascript"
+      ],
+      "primaryPeriod": "monthly",
+      "source": "monthly:javascript"
     },
     {
       "rank": 117,
@@ -5273,7 +5273,7 @@
       "source": "daily:java,weekly:java"
     }
   ],
-  "fetchedAt": "2026-07-22T21:01:28.796Z",
+  "fetchedAt": "2026-07-23T21:01:27.867Z",
   "count": 261,
   "source": "cloudflare-multi-period",
   "quality": {
